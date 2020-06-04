@@ -1,0 +1,14 @@
+<div (click)="toggleExpand()" (blur)="toggleExpand()" tabindex="1" class="select">
+    <button>
+        <span class="select__value">{{value?.name || placeholder}}</span>
+        <img
+            src="../../../../assets/chevron-horizontal.png"
+            class="select__chevron"
+            [class.select__chevron--opened]="isOpen"/>
+    </button>
+    <ul *ngIf="isOpen" [@inOutAnimation] class="select__options">
+        <li *ngFor="let option of options" class="select__option">
+            <button class="select__option-button" (click)="selectOption(option)">{{option.name}}</button>
+        </li>
+    </ul>
+</div>

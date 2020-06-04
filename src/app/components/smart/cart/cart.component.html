@@ -1,0 +1,31 @@
+<aside [class.cart--opened]="isOpened$ | async" class="cart">
+    <div class="cart__header">
+        <button (click)="closeCart()" class="cart__close-button"></button>
+    </div>
+    <ng-container *ngIf="(products$ | async) as products">
+        <div class="cart__content" *ngIf="!!products.length; else noProducts">
+            <div class="cart__scrollable-content">
+                <ul class="cart__products">
+                    <li *ngFor="let product of products" class="cart__item">
+                        <app-cart-product [product]="product" (amountChanged)="onAmountChanged($event)"></app-cart-product>
+                    </li>
+                </ul>
+                <div class="cart__summary">
+                    <span>Итого</span>
+                    <span>{{products | invokeFunction : getProductsPrice | currency}}</span>
+                </div>
+            </div>
+            <div class="cart__buy-button-wrapper">
+                <button class="cart__buy-button">
+                    Купить
+                </button>
+            </div>
+        </div>
+    </ng-container>
+</aside>
+
+<ng-template #noProducts>
+    <div class="cart__summary">
+        <span>Корзина пуста</span>
+    </div>
+</ng-template>

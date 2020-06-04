@@ -1,0 +1,116 @@
+@import '../../../../styles/variables.scss';
+
+@mixin pseudo-icon() {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    border-top: 2px solid $white;
+}
+:host {
+    display: block;
+
+    .cart {
+        position: fixed;
+        background: $grey;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 340px;
+        z-index: 12;
+        transform: translateX(340px);
+        transition: .3s transform ease-out;
+
+        &--opened {
+            transform: translateX(0);
+        }
+
+        &__header {
+            height: 15%;
+            padding: 5% 38px;
+            text-align: right;
+            border: 1px solid $grey-border;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-height: 85%;
+        }
+
+        &__scrollable-content {
+            flex-grow: 1;
+            max-height: calc(100% - 100px);
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+              }
+               
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px $grey-light;
+              }
+               
+            &::-webkit-scrollbar-thumb {
+                background-color: $white;
+                outline: 1px solid $grey-light;
+              }
+        }
+
+        &__close-button {
+            width: 28px;
+            height: 28px;
+        }
+
+        &__close-button:before {
+            @include pseudo-icon();
+            transform: rotate(-45deg);
+        }
+
+        &__close-button:after {
+            @include pseudo-icon();
+            transform: rotate(45deg);
+            position: relative;
+            top: -19px;
+        }
+
+        &__item {
+            border-bottom: 1px solid $grey-border;
+            padding: 20px 36px;
+            height: 122px;
+        }
+
+        &__summary {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 36px 40px 40px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.8px;
+            color: $white;
+        }
+
+        &__buy-button-wrapper {
+            padding: 0 40px;
+        }
+
+        &__buy-button {
+            display: block;
+            width: 100%;
+            padding: 22px;
+            border: 2px solid $white;
+            font-weight: 700;
+            font-size: 16px;
+            color: $white;
+            line-height: 19px;
+            letter-spacing: 2px;
+            background-color: $grey;
+            transition: .2s background-color;
+
+            &:hover {
+                background-color: darken($grey, 10%);
+            }
+        }
+    }
+}

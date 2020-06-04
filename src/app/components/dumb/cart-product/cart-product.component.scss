@@ -1,0 +1,50 @@
+@import '../../../../styles/variables.scss';
+
+:host {
+    display: block;
+    height: 100%;
+    color: $white;
+
+    .cart-product {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        &__image {
+            max-height: 100%;
+            margin-right: 18px;
+            display: inline-block;
+        }
+
+        &__info {
+            flex-grow: 1;
+        }
+
+        &__name {
+            margin-bottom: 6px;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        &__amount-control {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.7px;
+        }
+
+        &__amount {
+            margin: 0 9px;
+        }
+
+        &__price {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 1px;
+            float: right;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<div class="carousel">
+    <div class="carousel__image-container">
+        <img [src]="images[selectedImageIndex]" class="carousel__selected-image" />
+    </div>
+    <div *ngIf="images.length > 1" (click)="preventDefault($event)" class="carousel__controls">
+        <button [disabled]="selectedImageIndex === 0" (click)="setSelectedImage(selectedImageIndex - 1)">
+            <img class="carousel__control carousel__control--left" src="../../../../../../assets/chevron-horizontal.png">
+        </button>
+        <ul class="carousel__items">
+            <li *ngFor="let image of images; let i = index" (click)="setSelectedImage(i)" class="carousel__item">
+                <img [src]="image" [class.carousel__image--selected]="selectedImageIndex === i" class="carousel__image" />
+            </li>
+        </ul>
+        <button [disabled]="selectedImageIndex === images.length - 1" (click)="setSelectedImage(selectedImageIndex + 1)">
+            <img class="carousel__control carousel__control--right" src="../../../../../../assets/chevron-horizontal.png">
+        </button>
+    </div>
+</div>

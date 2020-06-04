@@ -1,0 +1,10 @@
+<header class="header">
+    <a [routerLink]="['/']">
+        <img src="../../../../assets/logo.png"/>
+    </a>
+
+    <button (click)="openCart()" name="cart" class="cart">
+        <img src="../../../../assets/cart.svg" />
+        <div class="cart__counter"><span class="cart__number">{{cartCount$ | async}}</span></div>
+    </button>
+</header>

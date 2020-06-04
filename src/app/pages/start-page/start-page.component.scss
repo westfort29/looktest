@@ -1,0 +1,17 @@
+:host {
+    display: block;
+
+    .products {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 100px;
+
+        &__navigation {
+            width: 15%;
+        }
+
+        &__items {
+            width: 80%;
+        }
+    }
+}

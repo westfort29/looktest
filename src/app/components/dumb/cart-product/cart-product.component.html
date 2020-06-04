@@ -1,0 +1,16 @@
+<div class="cart-product">
+    <img [src]="product.images[0]" class="cart-product__image">
+    <div class="cart-product__info">
+        <p class="cart-product__name">{{product.name}}</p>
+        <div class="cart-product__params">
+            <div class="cart-product__price">
+                {{product.price | currency}}
+            </div>
+            <div class="cart-product__amount-control">
+                <button (click)="changeAmount(-1)">-</button>
+                <span class="cart-product__amount">{{product.amount}}</span>
+                <button (click)="changeAmount(1)">+</button>
+            </div>
+        </div>
+    </div>
+</div>

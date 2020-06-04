@@ -1,0 +1,17 @@
+:host {
+    display: block;
+
+    .products {
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-rows: 510px;
+            grid-column-gap: 74px;
+            grid-row-gap: 30px;
+        }
+
+        &__item {
+            text-decoration: none;
+        }
+    }
+}

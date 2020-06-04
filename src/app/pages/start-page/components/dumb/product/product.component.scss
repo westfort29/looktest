@@ -1,0 +1,51 @@
+@import '../../../../../../styles/variables.scss';
+@import '../../../../../../styles/mixins.scss';
+
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    .product {
+        width: 100%;
+        height: 100%;
+        color: $black;
+
+        &__category {
+            color: $grey-light;
+            font-weight: 500;
+            font-size: 10px;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        &__images {
+            height: 390px;
+        }
+
+        &__info {
+            padding: 15px 20px;
+        }
+
+        &__name {
+            font-size: 16px;
+            @include line-clamp();
+        }
+
+        &__price {
+            margin-top: 16px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        &__available {
+            margin-top: 4px;
+            text-align: center;
+            color: $grey-light;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+    }
+}

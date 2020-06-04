@@ -1,0 +1,9 @@
+<section class="products">
+    <ul class="products__list">
+        <li class="products__item" *ngFor="let product of products$ | async">
+            <a [routerLink]="['/product/' + product.id]" class="products__item">
+                <app-product [product]="product"></app-product>
+            </a>
+        </li>
+    </ul>
+</section>

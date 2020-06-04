@@ -1,0 +1,11 @@
+<div class="product">
+    <div class="product__images">
+        <app-carousel *ngIf="product.images" [images]="product.images"></app-carousel>
+    </div>
+    <section class="product__info">
+        <p class="product__category">{{product.categoryName}}</p>
+        <span class="product__name">{{product.name}}</span>
+        <p class="product__price">{{product.price | currency}}</p>
+        <p class="product__available">На складе: {{product.available}}</p>
+    </section>
+</div>

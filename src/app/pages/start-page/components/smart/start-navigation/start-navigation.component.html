@@ -1,0 +1,17 @@
+<ul class="navigation">
+    <li *ngFor="let category of categories" class="navigation__category">
+        <a
+            [routerLink]="['/start']"
+            [queryParams]="{category: category.paramName}"
+            [class.navigation__active-link]="(activeCategoryId$ | async) === category.paramName"
+            queryParamsHandling="merge"
+            class="navigation__link">
+
+            {{category.name}}
+        </a>
+    </li>
+</ul>
+
+<div class="navigation__sorting">
+    <app-select [formControl]="sortControl" [options]="selectOptions" placeholder="Сортировать"></app-select>
+</div>
